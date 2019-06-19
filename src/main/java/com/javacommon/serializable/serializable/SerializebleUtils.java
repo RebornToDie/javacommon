@@ -1,10 +1,10 @@
-package com.javacommon;
+package com.javacommon.serializable.serializable;
 
 import java.io.*;
 
 public class SerializebleUtils {
 
-    public static <T extends Serializable> T writeObj(T model, String outPutPath) {
+    public static <T extends Serializable> void writeObj(T model, String outPutPath) {
         try {
             FileOutputStream fileOut =
                     new FileOutputStream(outPutPath);//"/tmp/employee.ser");
@@ -17,13 +17,10 @@ public class SerializebleUtils {
             i.printStackTrace();
         }
 
-        return model;
     }
 
 
     public static <T extends Serializable> T readObj(Class<T> modelClass, String outPutPath) {
-
-
 
         try {
             T model = modelClass.newInstance();
